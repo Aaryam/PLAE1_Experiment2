@@ -5,11 +5,15 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = os.chdir(os.path.join(os.getcwd(), 'data', 'Day1', '01062026DataMUO.txt'))
+path = os.path.join(os.getcwd(), 'data', 'Day1')
+print(path)
+os.chdir(path)
 
 # path = os.path.join(os.path.pardir(os.getcwd()), 'data', 'Day1', '01062026DataMUO.txt')
 
-fileData = np.loadtxt(path, dtype='str', delimiter=',', skiprows=1)
-columnTitles = np.loadtxt('01062026DataMUO', dtype='str', delimiter=',', max_rows=1)
+fileData = np.loadtxt('01062026DataMUO.txt', dtype='float', delimiter='\t', skiprows=1)
+columnTitles = np.loadtxt('01062026DataMUO.txt', dtype='str', delimiter='\t', max_rows=1)
 
-print(fileData)
+plt.plot(fileData[:,0],fileData[:,1])
+plt.ylim((0,100))
+plt.show()
