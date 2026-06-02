@@ -2,9 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-import numpy as np
-import matplotlib.pyplot as plt
-
 path = os.path.join(os.getcwd(), 'data', 'Day1')
 print(path)
 os.chdir(path)
